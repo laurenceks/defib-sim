@@ -1,0 +1,368 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+p{
+    margin: 0;
+}
+h1,h2{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    text-align: left;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+h2{
+    font-size: 35px;
+}
+a{
+    color: inherit;
+}
+a:hover{
+    color: #999999;
+}
+#monitorWrap {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    background-color: #000000;
+    height: 600px;
+    padding-top: 5px;
+}
+#header{
+    padding: 2px 5px;
+}
+.headerText{
+    font-size: 12px;
+    text-transform: capitalize;
+    display: inline-block;
+    width: calc((100%/3) - (10px/3));
+}
+.subHeaderText{
+    font-size: 12px;
+    display: none;
+    margin: 0;
+    padding: 0 2px;
+    width: auto;
+}
+#heartRateWrap{
+    box-sizing: border-box;
+    position: absolute;
+    width: 150px;
+    height: 600px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 0;
+    text-align: right;
+}
+.obs, .obsName, .energyButton, .energyLabel, .waveLabel, .controlButtonP, #chargeBar,#optionsSlider,.option,.headerText{
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    color: #00FF00;
+}
+.obs, .obsName{
+    cursor: default;
+}
+.energyButton, .controlButton{
+    cursor: pointer;
+}
+.obsName{
+    font-size: 15px;
+    height: 20px;
+}
+.obs{
+    font-size: 50px;
+    vertical-align: top;
+    height: 80px;
+    margin-bottom: 100px;
+}
+.co2{
+    color: #FFA500;
+    margin-bottom: 0;
+}
+.bp {
+    color: #e60000;
+    margin-bottom: 0;
+}
+.rr {
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.spo2{
+    color: #668dff;
+    margin-bottom: 0;
+}
+#bp {
+    font-size: 30px;
+}
+.waveLabel{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-transform: capitalize;
+    font-size: 12px;
+    height: 15px;
+    background-color: #000000;
+}
+.wave {
+    box-sizing: border-box;
+    position: relative;
+    width: 85%;
+    width: calc(100% - 150px);
+    right: 0;
+    height: 200px;
+    background-color: #000000;
+    left: 150px;
+}
+#ecg,#spo2Canvas{
+    width: 100%;
+    height: 200px;
+    background-color: #000000;
+}
+#controlsWrap{
+    min-height: 200px;
+    background-color: #000000;
+    text-align: center;
+    font-size: 0;
+    vertical-align: top;
+}
+.controlCol{
+    display: inline-block;
+    vertical-align: top;
+}
+.controlButton, .energyButton{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 50px;
+    width: 250px;
+    text-align: center;
+    vertical-align: top;
+    padding: 5px;
+}
+.controlButtonP, .energyLabel{
+    height: 40px;
+    line-height: 40px;
+    width: 240px;
+    display: inline-block;
+    font-size: 30px;
+    color: #FFFFFF;
+    vertical-align: middle;
+}
+.controlButton:hover p{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+#on{
+    height: 100px;
+    width: 150px;
+}
+#on p{
+    height: 90px;
+    line-height: 90px;
+    width: 140px;
+    font-size: 50px;
+    color: #ffffff
+}
+#on:hover p{
+    color: #000000
+}
+.energyButton,.energyLabel {
+    font-size: 30px;
+    display: inline-block;
+    color: #00FF00;
+    width: auto;
+    height: 50px;
+    padding: 5px;
+}
+.energyButton{
+    width: 50px;
+}
+.energyButton:hover{
+    color: #000000;
+    background-color: #00FF00;
+}
+#chargeButton p{
+    color: #ffff00;
+}
+#chargeButton:hover p{
+    background-color: #ffff00;
+    color: #000000;
+}
+#chargeBarWrap{
+    visibility: hidden;
+    padding: 5px;
+    height: 48px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#chargeBarOutline{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ffff00;
+}
+#chargeBar{
+    height: 100%;
+    width: 0;
+    background-color: #ffff00;
+    font-size: 30px;
+    color: #000000;
+}
+#shockButton{
+    width: 250px;
+    height: 100px;
+}
+#shockButton p{
+    height: 90px;
+    line-height: 90px;
+    width: 240px;
+    font-size: 50px;
+}
+#optionsSlider{
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+#optionsWrap {
+    width: 60%;
+    max-width: 760px;
+    min-width: 520px;
+    margin:auto;
+    padding: 20px;
+    text-align: left;
+    background-color: #FFFFFF;
+    display: none;
+}
+.option,.optBlock{
+    font-family: 'Khula', sans-serif;
+    font-weight: 300;
+}
+.optBlock{
+    font-size: 22px;
+    padding: 10px 0;
+}
+.option{
+    min-width: 240px;
+    height: 25px;
+    display: inline-block;
+    text-transform: none;
+    color: #000000;
+    font-size: 18px;
+}
+input[type="number"]{
+    width: 40px;
+}
+#shortcuts{
+    max-width: 960px;
+    margin:auto;
+    font-size: 0;
+    padding-bottom: 20px;
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* For iPad landscape layouts only */
+    .controlButton{
+        width: 190px;
+    }
+    .controlButtonP{
+        width: 180px;
+        font-size: 20px;
+    }
+    .controlCol{
+        max-width: 190px;
+    }
+    #on{
+        width: 100px;
+    }
+    #on p{
+        font-size: 30px;
+        line-height: normal;
+        width: 90px;
+    }
+    .energyLabel, .energyButton{
+        font-size: 20px;
+        width: auto;
+    }
+    #shockButton{
+        width: 150px;
+    }
+    #shockButton p{
+        width: 140px;
+        font-size: 30px;
+    }
+}
+@media only screen
+    /* iPhone 6+*/
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : landscape),
+    /* iPhone 6*/
+(min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : landscape),
+    /* iPhone 5/5S*/
+(min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape),
+    /* iPhone 2G-4S*/
+(min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : landscape){
+    #monitorWrap{
+        width: calc(100% - 200px);
+        display: inline-block;
+    }
+    #controlsWrap{
+        display: inline-block;
+        width: 190px;
+    }
+    .obs{
+        margin-bottom: 0;
+    }
+    .controlButton{
+        width: 190px;
+    }
+    .controlButtonP{
+        width: 180px;
+        font-size: 20px;
+    }
+    .controlCol{
+        max-width: 190px;
+    }
+    #on{
+        width: 100px;
+        height: 50px;
+    }
+    #on p{
+        font-size: 30px;
+        line-height: normal;
+        width: 90px;
+        height: 40px;
+    }
+    .energyLabel, .energyButton{
+        font-size: 20px;
+        width: auto;
+    }
+    #shockButton{
+        width: 150px;
+    }
+    #shockButton p{
+        width: 140px;
+        font-size: 30px;
+    }
+}

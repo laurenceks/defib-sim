@@ -1,0 +1,14 @@
+SetEnvIf %{SERVER_PORT} ^80$ IS_NON_SSL
+
+RewriteEngine On
+
+RewriteCond %{HTTPS} !on
+RewriteCond %{THE_REQUEST} ^(GET|HEAD)\ ([^\ ]+)
+RewriteRule ^ https://%{HTTP_HOST}%2 [L,R=301]
+
+SetEnvIf Request_URI "(favicon.ico)$" allow
+SetEnvIf Request_URI "(/favicons/)$" allow
+SetEnvIf Request_URI "(/favicons/*)$" allow
+Order allow,deny
+Allow from env=allow
+Satisfy any

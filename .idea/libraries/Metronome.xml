@@ -1,0 +1,8 @@
+<component name="libraryTable">
+  <library name="Metronome" type="javaScript">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/jquery.metronome-min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

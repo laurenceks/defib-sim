@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Defib Sim</title>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/icons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/icons/favicon-128.png" sizes="128x128" />
+   <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="application-name" content="Defib Sim"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/icons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/icons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Khula:300|Roboto+Mono:500|Raleway:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-70692386-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="ecg.js"></script>
+</head>
+<body>
+<div id="header">
+    <div class="headerText" style="font-size: 0px">
+        <p id="cprDisplay" class="subHeaderText">CPR</p>
+        <p id="ventDisplay" class="subHeaderText">BVM</p>
+        <p id="intubatedDisplay" class="subHeaderText">ETT</p>
+    </div>
+    <p class="headerText" id="clock" style="text-align: center"></p>
+    <p class="headerText" id = "shockDisplay" style="text-align: right">/p>
+</div>
+<div id="monitorWrap">
+    <div id="heartRateWrap">
+        <p class="obsName">HR</p>
+        <p id="heartRate" class="obs">--</p>
+        <br>
+        <p class="obsName spo2">S<sub>P</sub>O<sub>2</sub>(%)</p>
+        <p id="spo2" class="obs spo2">--</p>
+        <br>
+        <p class="obsName bp">NIBP<span style="text-transform: none">(mmHG)</span></p>
+        <p id="bp" class="obs bp">---/---</p>
+        <br>
+        <p class="obsName co2">ETCO<sub>2</sub> <span style="text-transform: none">(mmHG)</span></p>
+        <p id="etco2" class="obs co2">--</p>
+        <br>
+        <p class="obsName rr">RR</p>
+        <p id="rr" class="obs rr">--</p>
+    </div>
+    <div id="rhythmWrap" class="wave">
+        <p class="waveLabel">Paddles</p>
+        <canvas id="ecg" onclick="waveClick('ecg')"></canvas>
+    </div>
+    <div id="spo2Wave" class="wave">
+        <p class="waveLabel spo2">S<sub>P</sub>O<sub>2</sub></p>
+        <canvas id="spo2Canvas" onclick="waveClick('spo2')"></canvas>
+    </div>
+    <div id="etco2Wave" class="wave">
+        <p class="waveLabel co2">ETCO<sub>2</sub></p>
+        <canvas id="etco2Canvas" onclick="waveClick('co2')"></canvas>
+    </div>
+</div>
+<div id="controlsWrap">
+    <div class="controlCol">
+        <div id="on" class="controlButton" onclick="monitorTurnOnOff()">
+            <p id="monitorButton" class="controlButtonP">Off</p>
+        </div>
+    </div>
+    <div class="controlCol">
+        <div id="nibp" class="controlButton" onclick="recordBP()">
+            <p id="bpButtonP" class="controlButtonP">Record NIBP</p>
+        </div>
+        <br>
+        <div id="metronomeButton" class="controlButton" onclick="metronomeOn()">
+            <p id="metronomeButtonLabel" class="controlButtonP">Metronome Off</p>
+        </div>
+    </div>
+    <div class="controlCol">
+        <div id="co2button" class="controlButton" onclick="etco2On()">
+            <p id="etco2buttonLabel" class="controlButtonP">ETCO2 off</p>
+        </div>
+        <br>
+        <div id="spo2button" class="controlButton" onclick="spo2On()">
+            <p id = "spo2buttonLabel" class="controlButtonP">SPO2 Off</p>
+        </div>
+    </div>
+    <div class="controlCol" style="width: 250px; text-align: center">
+        <p class="energyLabel">Energy Select</p>
+        <br>
+        <p class="energyButton" onclick="changeEnergy(-10)">
+            <i class="fa fa-chevron-down"></i>
+        </p>
+        <p id="energyValue" class="energyLabel" style="min-width: 100px">---</p>
+        <p class="energyButton" onclick="changeEnergy(10)">
+            <i class="fa fa-chevron-up"></i>
+        </p>
+    </div>
+    <div class="controlCol">
+        <div id="chargeButton" class="controlButton" onclick="charge()">
+            <p id="chargeButtonLabel" class="controlButtonP">Charge</p>
+        </div>
+        <br>
+        <div id="chargeBarWrap" class="controlButton">
+            <div id="chargeBarOutline">
+                <div id="chargeBar" onclick="disarm()"></div>
+            </div>
+        </div>
+    </div>
+    <div class="controlCol">
+        <div id="shockButton" class="controlButton" onclick="shock()">
+            <p id="shockButtonLabel" class="controlButtonP"><i class="fa fa-bolt"></i> Shock</p>
+        </div>
+    </div>
+</div>
+<div id="optionsSlider" onclick="showSettings()"><i class="fa fa-cog"></i> Settings
+    <i id="sliderArrow"class="fa fa-caret-right" style="width: 10px"></i></div>
+<div id="optionsWrap">
+    <div id="actionsWrap">
+        <h1>Resuscitator actions</h1>
+        <p class="optBlock" style="font-style: italic">Tip: use the keyboard shortcuts so they can't see the settings</p>
+        <p class="option">Compressions (c) <input type="checkbox" id="cprButton" onchange="updateActions()"></p>
+        <p class="option">Ventilations (v) <input type="checkbox" id="ventButton" onchange="updateActions()"></p>
+        <p class="option">Ventilation rate <input type="number"  id="vpmBox" value="12" onchange="updateActions()"></p>
+        <p class="option">Intubated i.e.not 30:2 (i)
+            <input type="checkbox" id="intubatedButton" onchange="updateActions()"><br>
+        <p class="optBlock" style="font-style: italic">Other shortcuts</p>
+        <div id="shortcuts">
+            <p class="option">Monitor on/off - tab</p>
+            <p class="option">Energy up - up arrow</p>
+            <p class="option">Energy down - down arrow</p>
+            <p class="option">Charge - enter</p>
+            <p class="option">Disarm - d</p>
+            <p class="option">Shock - spacebar</p>
+            <p class="option">S<sub>P</sub>O<sub>2</sub> on/off - s</p>
+            <p class="option">ETCO<sub>2</sub> on/off - spacebar</p>
+            <p class="option">NIBP - b</p>
+            <p class="option">Metronome on/off - m</p>
+            <p class="option">CPR (touchscreen) - tap ECG</p>
+            <p class="option">BVM (touchscreen) - tap ETCO<sub>2</sub></p>
+            <p class="option">ETT (touchscreen) - tap S<sub>P</sub>O<sub>2</sub></p>
+        </div>
+    </div>
+    <div id="settingsWrap">
+        <h1>Resuscitation settings</h1>
+        <p class="optBlock" style="font-style: italic">Altering these will reset the simluation's shock counter</p>
+        <p class="option">Presenting rhythm <select id="presentingRhythmBox" onchange="updateSettings()">
+            <option value="asystole">Asystole</option>
+            <option value="vf">Ventricular fibrillation</option>
+            <option value="vt">Pulseless venticular tachycardia</option>
+            <option value="pea">Pulseless electrical activity</option>
+            <option value="nsr">Normal Sinus Rhythm</option>
+            <option value="stemi">ST-elevated myocardial infarction (inferior)</option>
+            <option value="af">Atrial fibrillation</option>
+            <option value="aflutter">Atrial flutter</option>
+            <option value="svt">Supraventricular Tachycardia</option>
+        </select></p><br>
+        <p class="option">Post-cpr rhythm <select id="postCPRRhythmBox" onchange="updateSettings()">
+            <option value="asystole">Asystole</option>
+            <option value="vf">Ventricular fibrillation</option>
+            <option value="vt" selected="selected">Pulseless venticular tachycardia</option>
+            <option value="pea">Pulseless electrical activity</option>
+            <option value="nsr">Normal Sinus Rhythm</option>
+            <option value="stemi">ST-elevated myocardial infarction (inferior)</option>
+            <option value="af">Atrial fibrillation</option>
+            <option value="aflutter">Atrial flutter</option>
+            <option value="svt">Supraventricular Tachycardia</option>
+        </select></p><br>
+        <p class="option">Change rhythm after
+            <input type="number"  id="postCprTimeBox" value="150" onchange="updateSettings()">
+            seconds from onset of CPR (i.e. first compression)</p><br>
+        <p class="option"><em>Changing this will reset the CPR to rhythm change timer</em></p><br>
+        <p class="option">Post-shock rhythm <select id="postShockRhythmBox" onchange="updateSettings()">
+            <option value="asystole">Asystole</option>
+            <option value="vf" selected="selected">Ventricular fibrillation</option>
+            <option value="vt">Pulseless venticular tachycardia</option>
+            <option value="pea">Pulseless electrical activity</option>
+            <option value="nsr">Normal Sinus Rhythm</option>
+            <option value="stemi">ST-elevated myocardial infarction (inferior)</option>
+            <option value="af">Atrial fibrillation</option>
+            <option value="aflutter">Atrial flutter</option>
+            <option value="svt">Supraventricular Tachycardia</option>
+        </select> change after shock <input type="number"  id="postRhythmShockNum" value="1" onchange="updateSettings()">
+        </p><br>
+        <p class="option">ROSC rhythm <select id="roscRhythmBox" onchange="updateSettings()">
+            <option value="nsr">Normal Sinus Rhythm</option>
+            <option value="stemi" selected="selected">ST-elevated myocardial infarction (inferior)</option>
+            <option value="af">Atrial fibrillation</option>
+            <option value="aflutter">Atrial flutter</option>
+            <option value="svt">Supraventricular Tachycardia</option>
+        </select> rosc after shock <input type="number"  id="roscRhythmShockNum" value="3" onchange="updateSettings()"></p><br>
+        <p class="optBlock" style="font-style: italic">Altering these won't</p>
+        <p class="option">Heart rate (does not apply to VF, VT, PEA and asystole)
+            <input type="number"  id="heartRateBox" value="70" min="1" onchange="updateVars()"></p><br>
+        <p class="option">Respiratory rate (if not being ventilated)
+            <input type="number"  id="breathingRateBox" value="18" min="1" onchange="updateVars()"></p><br>
+        <p class="option">S<sub>P</sub>O<sub>2</sub> (if readable)
+            <input type="number"  id="satsBox" value="99" min="0" max="100" onchange="updateVars()"></p><br>
+        <p class="option">Ventilation ETCO<sub>2</sub> (if readable)
+            <input type="number"  id="co2Box" value="35" min="0" max="99" onchange="updateVars()"></p><br>
+        <p class="option">Breathing ETCO<sub>2</sub> (if readable)
+            <input type="number"  id="bCo2Box" value="55" min="0" max="99" onchange="updateVars()"></p><br>
+        <p class="option">Systolic BP max
+            <input type="number"  id="maxSysBox" value="130" min="0" onchange="updateVars()">
+            - min <input type="number"  id="minSysBox" value="110" min="0" onchange="updateVars()"></p><br>
+        <p class="option">Diastolic BP max
+            <input type="number"  id="maxDiaBox" value="80" min="0" onchange="updateVars()">
+            - min <input type="number"  id="minDiaBox" value="60" min="0" onchange="updateVars()"></p>
+        <br>
+        <br>
+        <p class="option">To share a scenario enter your settings and copy the address bar <em>before</em>
+            starting the simulation</p>
+        <br>
+        <br>
+        <p class="option"><a onclick="defaultSettings()">Restore defaults</a></p>
+        <br>
+        <h2>Defib Sim</h2>
+        <p class="option"><a href="about.html">About Defib Sim</a></p><br>
+        <p class="option">© Copyright Laurence Summers 2015. All rights reserved. v1.0</p>
+    </div>
+</div>
+</body>
+</html>

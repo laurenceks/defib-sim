@@ -1,0 +1,59 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+p{
+    margin: 0;
+    font-family: 'Khula', sans-serif;
+    font-weight: 300;
+    text-align: justify;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+h1,h2,h3{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    text-align: left;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+h2{
+    font-size: 35px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+}
+h3{
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+a{
+    color: inherit;
+}
+a:hover{
+    color: #999999;
+}
+#aboutWrap {
+    width: 60%;
+    max-width: 760px;
+    min-width: 520px;
+    margin:auto;
+    padding: 20px;
+    text-align: left;
+    background-color: #FFFFFF;
+}

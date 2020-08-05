@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="74b256c7-0ac8-464a-9c2f-b601deae072f" name="Defib Sim InfinityFree" url="http://ftpupload.net">
+        <fileTransfer host="ftpupload.net" port="21" rootFolder="/defibsim.laurencesummers.com/htdocs" accessType="FTPS">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
