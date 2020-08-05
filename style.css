@@ -1,7 +1,8 @@
-html{
+html {
     height: 100%;
 }
-body{
+
+body {
     margin: 0;
     padding: 5px;
     height: 100%;
@@ -15,11 +16,13 @@ body{
     -ms-user-select: none;
     user-select: none;
 }
-p{
+
+p {
     margin: 0;
 }
-h1,h2{
-    font-family: 'Raleway',sans-serif;
+
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 50px;
     text-align: left;
@@ -27,15 +30,19 @@ h1,h2{
     padding-top: 15px;
     padding-bottom: 20px;
 }
-h2{
+
+h2 {
     font-size: 35px;
 }
-a{
+
+a {
     color: inherit;
 }
-a:hover{
+
+a:hover {
     color: #999999;
 }
+
 #monitorWrap {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -47,27 +54,31 @@ a:hover{
     background-color: #000000;
     padding-top: 5px;
 }
-#header{
+
+#header {
     padding: 2px 0;
     display: grid;
     grid-template-columns: 33% 1fr 33%;
     grid-template-rows: 25px;
 }
-.headerText{
+
+.headerText {
     font-size: 12px;
     text-transform: capitalize;
     display: inline-block;
     /*width: calc((100%/3) - (10px/3));*/
     width: 100%;
 }
-.subHeaderText{
+
+.subHeaderText {
     font-size: 12px;
     display: none;
     margin: 0;
     padding: 0 2px;
     width: auto;
 }
-#heartRateWrap{
+
+#heartRateWrap {
     box-sizing: border-box;
     width: 150px;
     height: 600px;
@@ -76,55 +87,66 @@ a:hover{
     font-size: 0;
     text-align: right;
 }
-.obs, .obsName, .energyButton, .energyLabel, .waveLabel, .controlButtonP, #chargeBar,#optionsSlider,.option,.headerText{
+
+.obs, .obsName, .energyButton, .energyLabel, .waveLabel, .controlButtonP, #chargeBar, #optionsSlider, .option, .headerText {
     box-sizing: border-box;
     font-family: 'Roboto Mono', monospace;
     text-transform: uppercase;
     color: #00FF00;
 }
-.obs, .obsName{
+
+.obs, .obsName {
     cursor: default;
 }
-.energyButton, .controlButton{
+
+.energyButton, .controlButton {
     cursor: pointer;
 }
-.obsName{
+
+.obsName {
     font-size: 15px;
     height: 20px;
 }
-.obs{
+
+.obs {
     font-size: 50px;
     vertical-align: top;
     height: 80px;
     margin-bottom: 100px;
 }
-.co2{
+
+.co2 {
     color: #FFA500;
     margin-bottom: 0;
 }
+
 .bp {
     color: #e60000;
     margin-bottom: 0;
 }
+
 .rr {
     color: #ffffff;
     margin-bottom: 0;
 }
 
-.spo2{
+.spo2 {
     color: #668dff;
     margin-bottom: 0;
 }
+
 #bp {
     font-size: 30px;
 }
-.waveLabel{
+
+.waveLabel {
     position: absolute;
     text-transform: capitalize;
     font-size: 12px;
     height: 15px;
     background-color: #000000;
 }
+
 .wave {
     position: relative;
     box-sizing: border-box;
@@ -133,12 +155,14 @@ a:hover{
     height: 200px;
     background-color: #000000;
 }
-#ecg,#spo2Canvas{
+
+#ecg, #spo2Canvas {
     width: 100%;
     height: 200px;
     background-color: #000000;
 }
-#controlsWrap{
+
+#controlsWrap {
     min-height: 200px;
     background-color: #000000;
     text-align: center;
@@ -147,11 +171,13 @@ a:hover{
     display: grid;
     grid-template-columns: 150px repeat(5, 1fr);
 }
-.controlCol{
+
+.controlCol {
     display: inline-block;
     vertical-align: top;
 }
-.controlButton, .energyButton{
+
+.controlButton, .energyButton {
     /*display: inline-block;*/
     box-sizing: border-box;
     height: 50px;
@@ -160,7 +186,8 @@ a:hover{
     vertical-align: top;
     padding: 5px;
 }
-.controlButtonP, .energyLabel{
+
+.controlButtonP, .energyLabel {
     height: 40px;
     line-height: 40px;
     /*width: 240px;*/
@@ -169,25 +196,30 @@ a:hover{
     color: #FFFFFF;
     vertical-align: middle;
 }
-.controlButton:hover p{
+
+.controlButton:hover p {
     background-color: #FFFFFF;
     color: #000000;
 }
-#on{
+
+#on {
     height: 100px;
     width: 150px;
 }
-#on p{
+
+#on p {
     height: 90px;
     line-height: 90px;
     width: 140px;
     font-size: 50px;
     color: #ffffff
 }
-#on:hover p{
+
+#on:hover p {
     color: #000000
 }
-.energyButton,.energyLabel {
+
+.energyButton, .energyLabel {
     font-size: 30px;
     display: inline-block;
     color: #00FF00;
@@ -195,74 +227,97 @@ a:hover{
     height: 50px;
     padding: 5px;
 }
-.energyButton{
+
+.energyLabel {
+    min-width: 100px;
+}
+
+.energyButton {
     width: 50px;
 }
-.energyButton:hover{
+
+.energyButton:hover {
     color: #000000;
     background-color: #00FF00;
 }
-#chargeButton p{
+
+#energyWrap {
+    text-align: center;
+    width: 250px;
+}
+
+#chargeButton p {
     color: #ffff00;
 }
-#chargeButton:hover p{
+
+#chargeButton:hover p {
     background-color: #ffff00;
     color: #000000;
 }
-#chargeBarWrap{
+
+#chargeBarWrap {
     visibility: hidden;
     padding: 5px;
     height: 48px;
     box-sizing: border-box;
     overflow: hidden;
 }
-#chargeBarOutline{
+
+#chargeBarOutline {
     height: 100%;
     width: 100%;
     border: 1px solid #ffff00;
 }
-#chargeBar{
+
+#chargeBar {
     height: 100%;
     width: 0;
     background-color: #ffff00;
     font-size: 30px;
     color: #000000;
 }
-#shockButton{
+
+#shockButton {
     /*width: 250px;*/
     height: 100px;
 }
-#shockButton p{
+
+#shockButton p {
     height: 90px;
     line-height: 90px;
     /*width: 240px;*/
     font-size: 50px;
 }
-#optionsSlider{
+
+#optionsSlider {
     color: #FFFFFF;
     text-align: center;
     font-size: 25px;
     padding-bottom: 20px;
 }
+
 #optionsWrap {
     width: 60%;
     max-width: 760px;
     min-width: 520px;
-    margin:auto;
+    margin: auto;
     padding: 20px;
     text-align: left;
     background-color: #FFFFFF;
     display: none;
 }
-.option,.optBlock{
+
+.option, .optBlock {
     font-family: 'Khula', sans-serif;
     font-weight: 300;
 }
-.optBlock{
+
+.optBlock {
     font-size: 22px;
     padding: 10px 0;
 }
-.option{
+
+.option {
     min-width: 240px;
     height: 25px;
     display: inline-block;
@@ -270,115 +325,224 @@ a:hover{
     color: #000000;
     font-size: 18px;
 }
-input[type="number"]{
+
+input[type="number"] {
     width: 40px;
 }
-#shortcuts{
+
+#shortcuts {
     max-width: 960px;
-    margin:auto;
+    margin: auto;
     font-size: 0;
     padding-bottom: 20px;
 }
-@media only screen and (min-device-width: 1025px) and (max-device-width: 1366px) and (orientation:landscape) {
-/*iPad Pro landscape*/
-    .controlButtonP{
+
+@media only screen and (min-device-width: 1025px) and (max-device-width: 1366px) and (orientation: landscape) {
+    /*iPad Pro landscape*/
+    .controlButtonP {
         font-size: 28px;
     }
 }
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-    /* For iPad landscape layouts only */
-    #controlsWrap{
-        grid-template-columns: 100px repeat(5, 0.2fr);
+
+@media only screen and (max-device-width: 1024px) and (orientation: portrait) {
+    /*Up to iPad portrait*/
+    #controlsWrap {
+        grid-template-columns: 100px repeat(4, 1fr);
+        justify-items: center;
     }
-    .controlButton{
-        width: 190px;
+
+    .controlButton {
+        width: 100%;
     }
-    .controlButtonP{
+
+    .controlButtonP {
         font-size: 22px;
     }
+
     .controlCol{
-        max-width: 190px;
+        display: block;
+        width: 100%;
     }
-    #on{
+
+    .longText {
+        display: none;
+    }
+
+    #on {
         width: 100px;
     }
-    #on p{
+
+    #on p {
         font-size: 30px;
         width: 90px;
     }
-    .energyLabel, .energyButton{
-          font-size: 20px;
-          width: auto;
-      }
+
+    #energyWrap {
+        width: 200px;
+    }
+
+    .energyLabel, .energyButton {
+        font-size: 20px;
+        width: auto;
+    }
+
+    .energyLabel {
+        min-width: 80px;
+    }
 
     .energyButton > i {
         line-height: 40px;
     }
 
-    #shockButton{
+    #shockWrap {
+        grid-column-start: span 5;
+    }
+
+    #shockButton {
+        width: 100%;
+    }
+
+    #shockButton p {
+        width: 100%;
+        font-size: 30px;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        /*iPad Pro portrait*/
+        .controlButtonP{
+            font-size: 26px;
+        }
+        .energyLabel{
+            font-size: 26px;
+        }
+    }
+    @media only screen and (max-device-width: 420px) and (orientation: portrait) {
+        /*Mobile portrait*/
+        #controlsWrap{
+            grid-template-columns: 50% 50%;
+        }
+        #shockWrap {
+            grid-column-start: span 1;
+        }
+
+        #on, #on p{
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* For iPad landscape layouts only */
+    #controlsWrap {
+        grid-template-columns: 100px repeat(5, 1fr);
+    }
+
+    .controlButton {
+        width: 190px;
+    }
+
+    .controlButtonP {
+        font-size: 22px;
+    }
+
+    .controlCol {
+        max-width: 190px;
+    }
+
+    #on {
+        width: 100px;
+    }
+
+    #on p {
+        font-size: 30px;
+        width: 90px;
+    }
+
+    .energyLabel, .energyButton {
+        font-size: 20px;
+        width: auto;
+    }
+
+    .energyButton > i {
+        line-height: 40px;
+    }
+
+    #shockButton {
         width: 150px;
     }
-    #shockButton p{
+
+    #shockButton p {
         width: 140px;
         font-size: 30px;
     }
 }
+
 @media only screen
     /* iPhone 6+*/
-and (min-device-width : 414px)
-and (max-device-width : 736px)
-and (orientation : landscape),
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (orientation: landscape),
     /* iPhone 6*/
-(min-device-width : 375px)
-and (max-device-width : 667px)
-and (orientation : landscape),
+(min-device-width: 375px)
+and (max-device-width: 667px)
+and (orientation: landscape),
     /* iPhone 5/5S*/
-(min-device-width : 320px)
-and (max-device-width : 568px)
-and (orientation : landscape),
+(min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: landscape),
     /* iPhone 2G-4S*/
-(min-device-width : 320px)
-and (max-device-width : 480px)
-and (orientation : landscape){
-    #monitorWrap{
+(min-device-width: 320px)
+and (max-device-width: 480px)
+and (orientation: landscape) {
+    #monitorWrap {
         width: calc(100% - 200px);
         display: inline-block;
     }
-    #controlsWrap{
+
+    #controlsWrap {
         display: inline-block;
         width: 190px;
     }
-    .obs{
+
+    .obs {
         margin-bottom: 0;
     }
-    .controlButton{
+
+    .controlButton {
         width: 190px;
     }
-    .controlButtonP{
+
+    .controlButtonP {
         width: 180px;
         font-size: 20px;
     }
-    .controlCol{
+
+    .controlCol {
         max-width: 190px;
     }
-    #on{
+
+    #on {
         width: 100px;
         height: 50px;
     }
-    #on p{
+
+    #on p {
         font-size: 30px;
         line-height: normal;
         width: 90px;
         height: 40px;
     }
-    .energyLabel, .energyButton{
+
+    .energyLabel, .energyButton {
         font-size: 20px;
         width: auto;
     }
-    #shockButton{
+
+    #shockButton {
         width: 150px;
     }
-    #shockButton p{
+
+    #shockButton p {
         width: 140px;
         font-size: 30px;
     }

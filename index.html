@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Defib Sim</title>
@@ -24,6 +24,7 @@
     <meta name="msapplication-square150x150logo" content="/icons/mstile-150x150.png"/>
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png"/>
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Khula:300|Roboto+Mono:500|Raleway:300' rel='stylesheet'
           type='text/css'>
@@ -60,25 +61,25 @@
     <p class="headerText" id="shockDisplay" style="text-align: right">/p>
 </div>
 <div id="monitorWrap">
-    <div id="hrWrap">
+    <div id="hrWrap" class="monitorLabelWrap">
         <p class="obsName">HR</p>
         <p id="heartRate" class="obs">--</p>
     </div>
-    <div id="spo2Wrap">
+    <div id="spo2Wrap" class="monitorLabelWrap">
         <p class="obsName spo2">S<sub>P</sub>O<sub>2</sub>(%)</p>
         <p id="spo2" class="obs spo2">--</p>
-    <div id="nibpWrap">
-        <p class="obsName bp">NIBP<span style="text-transform: none">(mmHG)</span></p>
-        <p id="bp" class="obs bp">---/---</p>
+        <div id="nibpWrap">
+            <p class="obsName bp">NIBP<span style="text-transform: none">(mmHG)</span></p>
+            <p id="bp" class="obs bp">---/---</p>
+        </div>
     </div>
-    </div>
-    <div id="etco2Wrap">
+    <div id="etco2Wrap" class="monitorLabelWrap">
         <p class="obsName co2">ETCO<sub>2</sub> <span style="text-transform: none">(mmHG)</span></p>
         <p id="etco2" class="obs co2">--</p>
-    <div id="rrWrap">
-        <p class="obsName rr">RR</p>
-        <p id="rr" class="obs rr">--</p>
-    </div>
+        <div id="rrWrap">
+            <p class="obsName rr">RR</p>
+            <p id="rr" class="obs rr">--</p>
+        </div>
     </div>
     <div id="rhythmWrap" class="wave">
         <p class="waveLabel">Paddles</p>
@@ -101,36 +102,37 @@
     </div>
     <div class="controlCol">
         <div id="nibp" class="controlButton" onclick="recordBP()">
-            <p id="bpButtonP" class="controlButtonP">Record NIBP</p>
+            <p id="bpButtonP" class="controlButtonP"><Span class="longText">Record </Span>NIBP</p>
         </div>
         <br>
         <div id="metronomeButton" class="controlButton" onclick="metronomeOn()">
-            <p id="metronomeButtonLabel" class="controlButtonP">Metronome Off</p>
+            <p id="metronomeButtonLabel" class="controlButtonP">Metronome<span class="longText"> off</span></p>
         </div>
     </div>
     <div class="controlCol">
         <div id="co2button" class="controlButton" onclick="etco2On()">
-            <p id="etco2buttonLabel" class="controlButtonP">ETCO2 off</p>
+            <p id="etco2buttonLabel" class="controlButtonP">ETCO2<span class="longText"> off</span></p>
         </div>
         <br>
         <div id="spo2button" class="controlButton" onclick="spo2On()">
-            <p id="spo2buttonLabel" class="controlButtonP">SPO2 Off</p>
+            <p id="spo2buttonLabel" class="controlButtonP">SPO2<span class="longText"> off</span></p>
         </div>
     </div>
-    <div class="controlCol" style="width: 250px; text-align: center">
-        <p class="energyLabel">Energy Select</p>
-        <br>
-        <p class="energyButton" onclick="changeEnergy(-10)">
-            <i class="fa fa-chevron-down"></i>
-        </p>
-        <p id="energyValue" class="energyLabel" style="min-width: 100px">---</p>
-        <p class="energyButton" onclick="changeEnergy(10)">
-            <i class="fa fa-chevron-up"></i>
-        </p>
+    <div class="controlCol" id="energyWrap">
+        <p class="energyLabel">Energy<span class="longText"> Select</span></p>
+        <div>
+            <p class="energyButton" onclick="changeEnergy(-10)">
+                <i class="fa fa-chevron-down"></i>
+            </p>
+            <p id="energyValue" class="energyLabel">---</p>
+            <p class="energyButton" onclick="changeEnergy(10)">
+                <i class="fa fa-chevron-up"></i>
+            </p>
+        </div>
     </div>
     <div class="controlCol">
         <div id="chargeButton" class="controlButton" onclick="charge()">
-            <p id="chargeButtonLabel" class="controlButtonP">Charge</p>
+            <p id="chargeButtonLabel" class="controlButtonP">Charge<span class="longText" style="display: none">...</span></p>
         </div>
         <br>
         <div id="chargeBarWrap" class="controlButton">
@@ -139,7 +141,7 @@
             </div>
         </div>
     </div>
-    <div class="controlCol">
+    <div class="controlCol" id="shockWrap">
         <div id="shockButton" class="controlButton" onclick="shock()">
             <p id="shockButtonLabel" class="controlButtonP"><i class="fa fa-bolt"></i> Shock</p>
         </div>
