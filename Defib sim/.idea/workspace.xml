@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85f12d6a-66e1-4c17-831c-f2bb2d48b325" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Defib sim/.idea/Defib sim.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="85f12d6a-66e1-4c17-831c-f2bb2d48b325" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,53 +27,7 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="ProjectId" id="1fPSlCh3lUxSko3rRa2gJbC4ElR" />
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Dart</id>
-          </State>
-          <State>
-            <id>File Watchers</id>
-          </State>
-          <State>
-            <id>General</id>
-          </State>
-          <State>
-            <id>GeneralJavaScript</id>
-          </State>
-          <State>
-            <id>Internationalization issues</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
-            <id>Spelling</id>
-          </State>
-          <State>
-            <id>Unit testingJavaScript</id>
-          </State>
-          <State>
-            <id>XPath</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>SpellCheckingInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -92,7 +38,6 @@
     <property name="FullScreen" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -100,12 +45,15 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Projects" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\laurence summers\OneDrive\Projects\" />
+      <recent name="C:\Users\laurence summers\OneDrive\Projects\Defib Sim" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -160,8 +108,8 @@
       <updated>1447954661391</updated>
       <workItem from="1459354246139" duration="39000" />
       <workItem from="1468786994421" duration="17000" />
-      <workItem from="1596118386627" duration="6209000" />
-      <workItem from="1596615569923" duration="963000" />
+      <workItem from="1596118386627" duration="6804000" />
+      <workItem from="1596614127728" duration="1212000" />
     </task>
     <servers />
   </component>
@@ -185,18 +133,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596192271772" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1596210102132">
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1596615318727">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596210102132" />
-    <state x="291" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596616577043">
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596615318727" />
+    <state x="0" y="169" key="SettingsEditor" timestamp="1596615274360">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="291" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596616577043" />
-    <state x="284" y="257" key="ftp.server.browser" timestamp="1596192032111">
+    <state x="0" y="169" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596615274360" />
+    <state x="201" y="351" key="com.intellij.ide.util.TipDialog" timestamp="1596614128857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="284" y="257" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1596192032111" />
+    <state x="201" y="351" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596614128857" />
+    <state x="284" y="257" key="ftp.server.browser" timestamp="1596615523880">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="284" y="257" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1596615523880" />
     <state x="150" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1596191815824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -206,16 +158,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/ecg.js</url>
+          <url>file://$PROJECT_DIR$/../../Projects/Defib sim/Defib sim/ecg.js</url>
           <line>279</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/about.html</url>
+          <url>file://$PROJECT_DIR$/../../Projects/Defib sim/Defib sim/about.html</url>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/index.html</url>
+          <url>file://$PROJECT_DIR$/../../Projects/Defib sim/Defib sim/index.html</url>
           <line>141</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
