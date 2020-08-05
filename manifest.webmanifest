@@ -3,6 +3,7 @@
   "short_name": "DefibSim",
   "start_url": "/index.html",
   "display": "fullscreen",
+  "orientation":  "landscape",
   "background_color": "#000000",
   "description": "An ALS defibrillation simulator",
   "icons": [{

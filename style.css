@@ -3,9 +3,10 @@ html{
 }
 body{
     margin: 0;
-    padding: 0;
+    padding: 5px;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
     background-color: #000000;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -36,17 +37,21 @@ a:hover{
     color: #999999;
 }
 #monitorWrap {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 33% 1fr 33%;
+    grid-auto-flow: column;
     margin: 0;
     position: relative;
     width: 100%;
     background-color: #000000;
-    height: 600px;
     padding-top: 5px;
 }
 #header{
-    padding: 2px 5px;
+    padding: 2px 0;
     display: grid;
     grid-template-columns: 33% 1fr 33%;
+    grid-template-rows: 25px;
 }
 .headerText{
     font-size: 12px;
@@ -64,7 +69,6 @@ a:hover{
 }
 #heartRateWrap{
     box-sizing: border-box;
-    position: absolute;
     width: 150px;
     height: 600px;
     padding-left: 5px;
@@ -116,22 +120,18 @@ a:hover{
 }
 .waveLabel{
     position: absolute;
-    top: 10px;
-    right: 10px;
     text-transform: capitalize;
     font-size: 12px;
     height: 15px;
     background-color: #000000;
 }
 .wave {
-    box-sizing: border-box;
     position: relative;
-    width: 85%;
-    width: calc(100% - 150px);
-    right: 0;
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
     height: 200px;
     background-color: #000000;
-    left: 150px;
 }
 #ecg,#spo2Canvas{
     width: 100%;
@@ -144,16 +144,18 @@ a:hover{
     text-align: center;
     font-size: 0;
     vertical-align: top;
+    display: grid;
+    grid-template-columns: 150px repeat(5, 1fr);
 }
 .controlCol{
     display: inline-block;
     vertical-align: top;
 }
 .controlButton, .energyButton{
-    display: inline-block;
+    /*display: inline-block;*/
     box-sizing: border-box;
     height: 50px;
-    width: 250px;
+    /*width: 250px;*/
     text-align: center;
     vertical-align: top;
     padding: 5px;
@@ -161,8 +163,8 @@ a:hover{
 .controlButtonP, .energyLabel{
     height: 40px;
     line-height: 40px;
-    width: 240px;
-    display: inline-block;
+    /*width: 240px;*/
+    /*display: inline-block;*/
     font-size: 30px;
     color: #FFFFFF;
     vertical-align: middle;
@@ -227,13 +229,13 @@ a:hover{
     color: #000000;
 }
 #shockButton{
-    width: 250px;
+    /*width: 250px;*/
     height: 100px;
 }
 #shockButton p{
     height: 90px;
     line-height: 90px;
-    width: 240px;
+    /*width: 240px;*/
     font-size: 50px;
 }
 #optionsSlider{
@@ -277,14 +279,22 @@ input[type="number"]{
     font-size: 0;
     padding-bottom: 20px;
 }
+@media only screen and (min-device-width: 1025px) and (max-device-width: 1366px) and (orientation:landscape) {
+/*iPad Pro landscape*/
+    .controlButtonP{
+        font-size: 28px;
+    }
+}
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
     /* For iPad landscape layouts only */
+    #controlsWrap{
+        grid-template-columns: 100px repeat(5, 0.2fr);
+    }
     .controlButton{
         width: 190px;
     }
     .controlButtonP{
-        width: 180px;
-        font-size: 20px;
+        font-size: 22px;
     }
     .controlCol{
         max-width: 190px;
@@ -294,13 +304,17 @@ input[type="number"]{
     }
     #on p{
         font-size: 30px;
-        line-height: normal;
         width: 90px;
     }
     .energyLabel, .energyButton{
-        font-size: 20px;
-        width: auto;
+          font-size: 20px;
+          width: auto;
+      }
+
+    .energyButton > i {
+        line-height: 40px;
     }
+
     #shockButton{
         width: 150px;
     }
